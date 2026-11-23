@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<title>IzuyaClicker - Simple, free autoclicker for Windows</title>
+<meta name="description" content="Hold the click and IzuyaClicker does the rest. Adjustable CPS, randomizer and key activation. Free and a single file.">
+<style>
+:root{
+  --bg:#05070a; --card:#0f141b; --track:#1c2430; --line:#1b232e;
+  --accent:#00acc1; --accent-2:#26c6da; --text:#ecf0f6; --muted:#8793a6;
+  --good:#34d399; --bad:#f46373; --glow:rgba(0,172,193,.28);
+  color-scheme:dark;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]){
+    --bg:#f6f9fb; --card:#ffffff; --track:#dde5ec; --line:#e1e8ee;
+    --accent:#008a9b; --accent-2:#00acc1; --text:#0e1620; --muted:#5b6778;
+    --glow:rgba(0,172,193,.22); color-scheme:light;
+  }
+}
+:root[data-theme="light"]{
+  --bg:#f6f9fb; --card:#ffffff; --track:#dde5ec; --line:#e1e8ee;
+  --accent:#008a9b; --accent-2:#00acc1; --text:#0e1620; --muted:#5b6778;
+  --glow:rgba(0,172,193,.22); color-scheme:light;
+}
+:root[data-theme="dark"]{color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 "Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+/* Nav */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-weight:700;font-size:1.15rem;letter-spacing:-.01em}
+.logo{display:inline-flex;align-items:center;gap:9px}
+.logo b{color:var(--accent);margin-left:-9px}
+.logo img{display:block;width:28px;height:28px}
+.links{display:flex;gap:26px;align-items:center;font-size:.92rem;color:var(--muted)}
+.links a:hover{color:var(--text)}
+.btn-sm{padding:7px 16px;border-radius:999px;background:var(--accent);color:#031417 !important;font-weight:600}
+@media(max-width:640px){.links a:not(.btn-sm){display:none}}
+
+/* Hero */
+.hero{text-align:center;padding:84px 0 56px;position:relative}
+.hero::before{content:"";position:absolute;left:50%;top:40px;width:640px;max-width:100%;height:420px;transform:translateX(-50%);background:radial-gradient(closest-side,var(--glow),transparent);pointer-events:none}
+/* Réplica de la GUI de IzuyaClicker */
+.demo{display:flex;flex-direction:column;align-items:center;gap:16px;position:relative}
+.app{--abg:#0f0f16;--acard:#181822;--atrack:#303042;--aac:#00acc1;--atext:#ecedf5;--amut:#8787a0;--agood:#34d399;--abad:#f46373;position:relative;width:340px;height:544px;flex:none;background:var(--abg);border-radius:14px;box-shadow:inset 0 0 0 1px rgba(0,172,193,.27),0 30px 80px -20px #000a,0 0 90px rgba(0,172,193,.16);color:var(--atext);text-align:left;user-select:none;-webkit-user-select:none}
+.ttl{position:absolute;left:20px;top:13px;font-size:17.3px;font-weight:700;line-height:1}
+.ttl span+span{color:var(--aac)}
+.tb{position:absolute;top:10px;width:34px;height:28px;border-radius:6px;display:grid;place-items:center;color:var(--amut);cursor:pointer}
+.tb:hover{background:var(--atrack);color:#fff}.tb.x:hover{background:var(--abad)}
+.tb.g svg{width:15px;height:15px}
+.tb svg{width:12px;height:12px;stroke:currentColor;stroke-width:1.6;fill:none}
+.st{--c:var(--abad);position:absolute;left:20px;top:52px;width:300px;height:70px;border-radius:14px;border:1.5px solid color-mix(in srgb,var(--c) 47%,transparent);background:color-mix(in srgb,var(--c) 11%,transparent);cursor:pointer;transition:background .2s,border-color .2s}
+.st.on{--c:var(--agood)}
+.dot{position:absolute;left:16px;top:50%;margin-top:-14px;width:28px;height:28px;border-radius:50%;background:color-mix(in srgb,var(--c) 20%,transparent)}
+.dot::after{content:"";position:absolute;inset:7px;border-radius:50%;background:var(--c)}
+.s1{position:absolute;left:56px;top:12px;font-size:18.7px;font-weight:700;line-height:1;color:var(--c)}
+.s2{position:absolute;left:56px;top:40px;font-size:11px;line-height:14px;color:var(--amut)}.s2.g{color:var(--agood)}
+.cd{position:absolute;left:20px;width:300px;background:var(--acard);border-radius:12px}
+.c1{top:134px;height:124px}.c2{top:270px;height:236px}
+.lbl,.sl .cap,.sl .val,.tg b{font-size:13.3px;line-height:18px}
+.lbl{position:absolute;left:16px;top:19px}
+#kb{position:absolute;left:184px;top:14px;width:100px;height:32px;border:1px solid var(--aac);background:var(--atrack);display:grid;place-items:center;font-size:13.3px;font-weight:700;cursor:pointer}
+#kb:hover{background:#3e3e56}
+.sl{position:absolute;left:16px;width:268px;height:50px;cursor:pointer;touch-action:none;outline:0}
+.sl .cap{position:absolute;left:0;top:1px}
+.sl .val{position:absolute;right:0;top:1px;font-weight:700;color:var(--aac)}
+.sl .tr{position:absolute;left:8px;right:8px;top:34px;height:6px;border-radius:3px;background:var(--atrack)}
+.sl .fl{position:absolute;left:0;top:0;height:6px;min-width:6px;border-radius:3px;background:var(--aac)}
+.sl .th{position:absolute;top:-5px;width:16px;height:16px;margin-left:-8px;border-radius:50%;background:#fff;border:2px solid var(--aac)}
+.sl.dis{--aac:var(--amut);pointer-events:none}.sl.dis .cap{color:var(--amut)}
+.tg{position:absolute;left:16px;width:268px;height:48px;cursor:pointer}
+.tg b{position:absolute;left:0;top:5px;font-weight:400}
+.tg small{position:absolute;left:0;top:26px;font-size:11px;line-height:14px;color:var(--amut)}
+.tg i{position:absolute;right:2px;top:12px;width:44px;height:24px;border-radius:12px;background:var(--atrack);transition:background .15s}
+.tg i::after{content:"";position:absolute;left:4px;top:4px;width:16px;height:16px;border-radius:50%;background:#fff;transition:left .15s}
+.tg.on i{background:var(--aac)}.tg.on i::after{left:24px}
+.rg{position:absolute;left:16px;top:208px;width:268px;font-size:11px;line-height:18px;color:var(--amut)}
+.cr{position:absolute;left:150px;top:518px;width:170px;text-align:right;font-size:11px;line-height:18px;color:var(--amut)}
+.cr:hover{color:var(--aac);text-decoration:underline}
+@media(max-width:380px){.hero.wrap{padding-left:8px;padding-right:8px}}
+h2.big{font-size:clamp(2rem,5.5vw,3.4rem);line-height:1.1;letter-spacing:-.03em;margin:54px auto 18px;max-width:760px;position:relative}
+h2.big span{color:var(--accent)}
+.sub{max-width:600px;margin:0 auto 32px;color:var(--muted);font-size:1.08rem;position:relative}
+.cta{display:inline-block;padding:15px 34px;border-radius:14px;background:var(--accent);color:#031417;font-weight:700;font-size:1.02rem;box-shadow:0 10px 40px -8px var(--glow);transition:transform .15s,background .15s;position:relative}
+.cta:hover{transform:translateY(-2px);background:var(--accent-2)}
+.meta{margin-top:14px;color:var(--muted);font-size:.85rem;position:relative}
+.free{margin:46px auto 0;max-width:620px;color:var(--muted);position:relative}
+
+/* Sections */
+section{padding:56px 0}
+h2{font-size:1.9rem;letter-spacing:-.02em;margin:0 0 28px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px}
+.card h3{margin:0 0 8px;font-size:1.08rem}
+.card p{margin:0;color:var(--muted);font-size:.95rem}
+.ico{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:color-mix(in srgb,var(--accent) 16%,transparent);color:var(--accent);font-weight:800;margin-bottom:14px}
+@media(max-width:760px){.grid3{grid-template-columns:1fr}.hero{padding-top:56px}}
+@media(min-width:761px) and (max-width:900px){.grid3{grid-template-columns:repeat(2,1fr)}}
+
+/* Pasos */
+.steps{counter-reset:s;display:grid;gap:12px}
+.step{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px}
+.step::before{counter-increment:s;content:counter(s);flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:#031417;font-weight:800;font-size:.9rem}
+.step p{margin:0;color:var(--muted)}
+.step b{color:var(--text)}
+
+/* FAQ */
+details{border-bottom:1px solid var(--line);padding:18px 0}
+summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--accent);font-size:1.3rem;line-height:1}
+details[open] summary::after{content:"–"}
+details p{margin:12px 0 0;color:var(--muted)}
+
+footer{border-top:1px solid var(--line);padding:32px 0 40px;color:var(--muted);font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+footer a{color:var(--accent)}
+footer a:hover{text-decoration:underline}
+/* Hero en dos columnas + animación de entrada */
+.hero{text-align:left;padding:72px 24px 56px}
+.hero::before{left:auto;right:-60px;top:20px;transform:none}
+.hero-grid{display:grid;grid-template-columns:1fr 340px;gap:64px;align-items:center;position:relative}
+.copy h2.big{margin:0 0 18px;max-width:none}
+.copy .sub{margin:0 0 32px;max-width:520px}
+.copy .free{margin:40px 0 0;max-width:520px}
+@keyframes slideIn{from{opacity:0;transform:translateX(-90px)}to{opacity:1;transform:none}}
+.demo{animation:slideIn .95s cubic-bezier(.22,1,.36,1) .15s both}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:44px;justify-items:center}.copy{text-align:center}.copy .sub,.copy .free{margin-left:auto;margin-right:auto}.hero{padding-top:48px}.hero::before{right:50%;transform:translateX(50%)}}
+@media(prefers-reduced-motion:reduce){.demo{animation:none}}
+/* Selector de idioma */
+.lang{display:flex;align-items:center;gap:8px}
+.lang .pill{display:inline-flex;padding:2px;border:1px solid var(--line);border-radius:999px;background:var(--card)}
+.lang button{border:0;background:none;color:var(--muted);font-family:inherit;font-weight:600;font-size:.76rem;line-height:1;padding:6px 11px;border-radius:999px;cursor:pointer}
+.lang button.on{background:var(--accent);color:#031417}
+.lang button:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+@media(max-width:640px){.lang span{display:none}.links{gap:14px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="logo" href="#top">Izuya<b>Clicker</b><img src="data:image/png;base64,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" alt="" width="28" height="28"></a>
+      <div class="links">
+        <a href="#how" data-es="Cómo funciona">How it works</a>
+        <a href="#faq" data-es="Preguntas">FAQ</a>
+        <div class="lang">
+          <span data-es="Lenguaje">Language</span>
+          <div class="pill" role="group" aria-label="Language">
+            <button type="button" data-l="en" class="on" aria-pressed="true">EN</button>
+            <button type="button" data-l="es" aria-pressed="false">ES</button>
+          </div>
+        </div>
+        <a class="btn-sm" href="#download" data-es="Descargar">Download</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <div class="hero-grid">
+      <div class="copy">
+        <h2 class="big" data-es="Mantené el clic. <span>El resto lo hace él.</span>">Hold the click. <span>It does the rest.</span></h2>
+        <p class="sub" data-es="IzuyaClicker detecta tu juego y hace clic por vos mientras mantenés el botón izquierdo. Elegís la tecla y los CPS que quieras.">IzuyaClicker detects your game and clicks for you while you hold the left button. Pick the key and the CPS you want.</p>
+        <a class="cta" id="download" href="#download" data-es="Descargar para Windows">Download for Windows</a>
+        <p class="meta" data-es="Windows 10 y 11 · un solo archivo · última versión">Windows 10 and 11 · single file · latest version</p>
+        <p class="free" data-es="Gratis y sin cuentas. Es un proyecto completamente vibecodeado: simple, liviano y hecho para hacer una sola cosa bien.">Free, no accounts. A fully vibecoded project: simple, lightweight and built to do one thing well.</p>
+      </div>
+      <div class="demo">
+        <div class="app" id="app">
+          <div class="ttl"><span>Izuya</span><span>Clicker</span></div>
+          <div class="tb g" style="left:222px" aria-hidden="true"><svg viewBox="0 0 14 14"><circle cx="7" cy="7" r="4"/><circle cx="7" cy="7" r="1.6"/><path d="M7 .8v1.8M7 11.4v1.8M.8 7h1.8M11.4 7h1.8M2.6 2.6l1.3 1.3M10.1 10.1l1.3 1.3M2.6 11.4l1.3-1.3M10.1 3.9l1.3-1.3"/></svg></div>
+          <div class="tb" style="left:258px" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M1 9h10"/></svg></div>
+          <div class="tb x" style="left:294px" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M1 1l10 10M1 11L11 1"/></svg></div>
+          <div class="st" id="st"><div class="dot"></div><div class="s1" id="s1">DISABLED</div><div class="s2" id="s2">Waiting for Minecraft...</div></div>
+          <div class="cd c1">
+            <div class="lbl" data-es="Tecla de activación">Activation key</div>
+            <div id="kb" role="button">X</div>
+            <div class="sl" id="cps" style="top:62px" tabindex="0" role="slider" aria-label="CPS"><span class="cap" data-es="Clics por segundo (CPS)">Clicks per second (CPS)</span><span class="val"></span><div class="tr"><div class="fl"></div><div class="th"></div></div></div>
+          </div>
+          <div class="cd c2">
+            <div class="tg" id="inv" style="top:8px" role="switch"><b>Click Inventory</b><small data-es="Permite clics en menús e inventario">Allows clicks in menus and inventory</small><i></i></div>
+            <div class="tg" id="rnd" style="top:56px" role="switch"><b>Randomizer</b><small data-es="Variación de CPS más humana">Human-like CPS variation</small><i></i></div>
+            <div class="tg" id="exh" style="top:104px" role="switch"><b>Exhaust</b><small data-es="Baja los CPS con el tiempo y se recupera">Lowers CPS over time, then recovers</small><i></i></div>
+            <div class="sl dis" id="var" data-unit=" CPS" style="top:156px" tabindex="0" role="slider" aria-label="Variation"><span class="cap" data-es="Variación">Variation</span><span class="val"></span><div class="tr"><div class="fl"></div><div class="th"></div></div></div>
+            <div class="rg" id="rg"></div>
+          </div>
+          <a class="cr" href="https://x.com/Zelsssh" target="_blank" rel="noopener">Created by Mentiras</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="how">
+    <div class="wrap">
+      <h2 data-es="Cómo funciona">How it works</h2>
+      <div class="steps">
+        <div class="step"><p data-es="<b>Abrí IzuyaClicker</b> y dejalo corriendo. Muestra «Minecraft detectado» cuando encuentra tu juego."><b>Open IzuyaClicker</b> and leave it running. It shows “Minecraft detected” when it finds your game.</p></div>
+        <div class="step"><p data-es="<b>Apretá tu tecla</b> (por defecto X) para activarlo. La tarjeta pasa a verde: ACTIVADO."><b>Press your key</b> (X by default) to turn it on. The status card turns green: ENABLED.</p></div>
+        <div class="step"><p data-es="<b>Mantené el clic izquierdo</b> en el juego y empieza a clickear a la velocidad que elegiste."><b>Hold the left click</b> in the game and it starts clicking at the speed you chose.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="grid3">
+        <div class="card"><div class="ico">~</div><h3>Randomizer</h3><p data-es="Hace que los CPS varíen en cada clic dentro de un rango que definís, y te muestra el rango real.">Makes the CPS vary on every click within a range you define, and shows you the real range.</p></div>
+        <div class="card"><div class="ico">▤</div><h3>Click Inventory</h3><p data-es="Permite clics también en menús e inventario, siguiendo la posición del cursor.">Allows clicks in menus and inventory too, following the cursor position.</p></div>
+        <div class="card"><div class="ico">⌨</div><h3 data-es="Tecla configurable">Configurable key</h3><p data-es="Funciona aunque el juego esté en primer plano. Tocás el botón, presionás la tecla nueva y listo.">Works even while the game is in the foreground. Click the button, press the new key and you’re done.</p></div>
+        <div class="card"><div class="ico">◎</div><h3 data-es="Solo en tu juego">Only in your game</h3><p data-es="Solo actúa cuando la ventana activa es Minecraft. Fuera del juego no hace nada.">It only acts when the active window is Minecraft. Outside the game it does nothing.</p></div>
+        <div class="card"><div class="ico">◐</div><h3 data-es="Interfaz limpia">Clean interface</h3><p data-es="Ventana oscura sin bordes, con estado claro: ACTIVADO o DESACTIVADO de un vistazo.">Borderless dark window with a clear status: ENABLED or DISABLED at a glance.</p></div>
+        <div class="card"><div class="ico">✓</div><h3 data-es="En tu cliente favorito">In your favorite client</h3><p data-es="IzuyaClicker funciona tanto para Lunar Client, Badlion Client y Cheatbreaker.">IzuyaClicker works with Lunar Client, Badlion Client and Cheatbreaker.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <h2 data-es="Preguntas">FAQ</h2>
+      <details><summary data-es="Windows dice que protegió mi PC. ¿Es seguro?">Windows says it protected my PC. Is it safe?</summary><p data-es="Aparece porque IzuyaClicker no tiene firma digital, algo que Windows muestra con programas nuevos. Tocá «Más información» y después «Ejecutar de todas formas».">It appears because IzuyaClicker isn’t digitally signed, which Windows shows for new programs. Click “More info” and then “Run anyway”.</p></details>
+      <details><summary data-es="¿Cómo cambio la tecla de activación?">How do I change the activation key?</summary><p data-es="Tocá el botón de la tecla en la ventana, presioná la que quieras y queda guardada. Con Esc cancelás el cambio.">Click the key button in the window, press the key you want and it’s saved. Press Esc to cancel.</p></details>
+      <details><summary data-es="¿Para qué sirve el Randomizer?">What is the Randomizer for?</summary><p data-es="Hace que cada clic use un CPS distinto entre «CPS menos la variación» y tus CPS. La ventana te muestra el rango real.">It makes every click use a different CPS between “CPS minus the variation” and your CPS. The window shows you the real range.</p></details>
+      <details><summary data-es="¿Qué hace la opción Exhaust?">What does Exhaust do?</summary><p data-es="Simula el cansancio de la mano. Mientras mantenés el clic, los CPS bajan poco a poco hasta un 30% aproximado, luego se recuperan hasta tus CPS originales, se quedan así unos segundos y vuelve a empezar. Si soltás el clic, se recupera solo.">It simulates hand fatigue. While you hold the click, the CPS slowly drops by up to about 30%, then gradually recovers back to your original CPS, stays there for a few seconds and starts over. If you release the click, it recovers on its own.</p></details>
+      <details><summary data-es="¿Por qué dice «Esperando a Minecraft»?">Why does it say “Waiting for Minecraft”?</summary><p data-es="El programa solo funciona cuando la ventana en primer plano es la de Minecraft. Abrí el juego y pasa a «Minecraft detectado».">The program only works when the foreground window is Minecraft. Open the game and it changes to “Minecraft detected”.</p></details>
+      <details><summary data-es="¿Funciona IzuyaClicker en Lunar Client, Badlion Client, Cheatbreaker y etc?">Does IzuyaClicker work on Lunar Client, Badlion Client, Cheatbreaker, etc.?</summary><p data-es="IzuyaClicker funciona en cualquier cliente que utilice el proceso «javaw.exe». Mientras tu cliente favorito use este proceso, no debería de haber ningún problema.">IzuyaClicker works with any client that uses the “javaw.exe” process. As long as your favorite client uses this process, there shouldn’t be any problem.</p></details>
+      <details><summary data-es="¿El cliente es detectable en servidores y ScreenShare (SS)?">Is the client detectable on servers and ScreenShare (SS)?</summary><p data-es="IzuyaClicker no está pensado para ser indetectable en ningún aspecto. Simplemente es un proyecto creado por diversión, por lo tanto queda todo bajo tu propio riesgo utilizarlo en cualquier servidor donde esta práctica sea sancionada.">IzuyaClicker isn’t designed to be undetectable in any way. It’s simply a project made for fun, so using it on any server where this practice is sanctioned is entirely at your own risk.</p></details>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span data-es="IzuyaClicker © 2026 · proyecto vibecodeado y gratuito">IzuyaClicker © 2026 · vibecoded and free project</span>
+    <span>Created by <a href="https://x.com/Zelsssh" target="_blank" rel="noopener">Mentiras</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var $=function(i){return document.getElementById(i)};
+  var S={on:false,key:'X',cap:false,cps:10,inv:false,rnd:false,exh:false,vr:4,lang:'en'};
+  var st=$('st'),s1=$('s1'),s2=$('s2'),kb=$('kb'),inv=$('inv'),rnd=$('rnd'),exh=$('exh'),rg=$('rg'),vr=$('var');
+  var T=function(en,es){return S.lang==='es'?es:en;};
+  var META={
+    en:{t:'IzuyaClicker - Simple, free autoclicker for Windows',d:'Hold the click and IzuyaClicker does the rest. Adjustable CPS, randomizer and key activation. Free and a single file.'},
+    es:{t:'IzuyaClicker - Autoclicker simple y gratuito para Windows',d:'Mantené el clic y IzuyaClicker hace el resto. CPS ajustables, randomizer y activación por tecla. Gratis y de un solo archivo.'}
+  };
+
+  function slider(el,min,max,v,cb){
+    var th=el.querySelector('.th'),fl=el.querySelector('.fl'),val=el.querySelector('.val'),unit=el.dataset.unit||'',drag=false;
+    function paint(){var t=(v-min)/(max-min)*100;th.style.left=t+'%';fl.style.width=t+'%';val.textContent=v+unit;}
+    function set(nv){nv=Math.max(min,Math.min(max,nv));if(nv!==v){v=nv;cb(v);}paint();}
+    function fromX(x){var r=el.getBoundingClientRect(),k=r.width/el.offsetWidth,t=(x-r.left-8*k)/(r.width-16*k);set(Math.round(min+Math.max(0,Math.min(1,t))*(max-min)));}
+    el.addEventListener('pointerdown',function(e){drag=true;el.setPointerCapture(e.pointerId);fromX(e.clientX);});
+    el.addEventListener('pointermove',function(e){if(drag)fromX(e.clientX);});
+    el.addEventListener('pointerup',function(){drag=false;});
+    el.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){e.preventDefault();set(v+1);}if(e.key==='ArrowLeft'){e.preventDefault();set(v-1);}});
+    paint();
+  }
+  slider($('cps'),1,30,10,function(v){S.cps=v;render();});
+  slider(vr,1,10,4,function(v){S.vr=v;render();});
+
+  function render(){
+    st.classList.toggle('on',S.on);
+    s1.textContent=S.on?T('ENABLED','ACTIVADO'):T('DISABLED','DESACTIVADO');
+    s2.textContent=T('Waiting for Minecraft...','Esperando a Minecraft...');
+    kb.textContent=S.cap?T('Press...','Presiona...'):S.key;
+    inv.classList.toggle('on',S.inv);
+    rnd.classList.toggle('on',S.rnd);
+    exh.classList.toggle('on',S.exh);
+    vr.classList.toggle('dis',!S.rnd);
+    rg.textContent=S.rnd?T('Actual range: ','Rango real: ')+Math.max(1,S.cps-S.vr)+' – '+S.cps+' CPS':T('Randomizer disabled','Randomizer desactivado');
+  }
+
+  function setLang(l){
+    S.lang=l;
+    document.documentElement.lang=l;
+    document.querySelectorAll('[data-es]').forEach(function(el){
+      if(!el.hasAttribute('data-en'))el.setAttribute('data-en',el.innerHTML);
+      el.innerHTML=el.getAttribute(l==='es'?'data-es':'data-en');
+    });
+    document.title=META[l].t;
+    document.querySelector('meta[name="description"]').setAttribute('content',META[l].d);
+    document.querySelectorAll('.lang button').forEach(function(b){
+      var on=b.dataset.l===l;b.classList.toggle('on',on);b.setAttribute('aria-pressed',on);
+    });
+    try{localStorage.setItem('lang',l);}catch(e){}
+    render();
+  }
+  document.querySelectorAll('.lang button').forEach(function(b){
+    b.addEventListener('click',function(){setLang(b.dataset.l);});
+  });
+
+  st.addEventListener('click',function(){S.on=!S.on;render();});
+  kb.addEventListener('click',function(){S.cap=true;render();});
+  inv.addEventListener('click',function(){S.inv=!S.inv;render();});
+  rnd.addEventListener('click',function(){S.rnd=!S.rnd;render();});
+  exh.addEventListener('click',function(){S.exh=!S.exh;render();});
+
+  function kn(e){var k=e.key;return k===' '?'Space':k.length===1?k.toUpperCase():k;}
+  document.addEventListener('keydown',function(e){
+    if(e.ctrlKey||e.metaKey||e.altKey)return;
+    if(S.cap){e.preventDefault();if(e.key!=='Escape')S.key=kn(e);S.cap=false;render();return;}
+    if(!e.repeat&&kn(e)===S.key){e.preventDefault();S.on=!S.on;render();}
+  });
+
+  var saved=null;
+  try{saved=localStorage.getItem('lang');}catch(e){}
+  setLang(saved==='es'?'es':'en');
+})();
+</script>
+</body>
+</html>
