@@ -53,7 +53,7 @@ nav{display:flex;align-items:center;justify-content:space-between;height:60px}
 .hero::before{content:"";position:absolute;left:50%;top:40px;width:640px;max-width:100%;height:420px;transform:translateX(-50%);background:radial-gradient(closest-side,var(--glow),transparent);pointer-events:none}
 /* Réplica de la GUI de IzuyaClicker */
 .demo{display:flex;flex-direction:column;align-items:center;gap:16px;position:relative}
-.app{--abg:#0f0f16;--acard:#181822;--atrack:#303042;--aac:#00acc1;--atext:#ecedf5;--amut:#8787a0;--agood:#34d399;--abad:#f46373;position:relative;width:340px;height:544px;flex:none;background:var(--abg);border-radius:14px;box-shadow:inset 0 0 0 1px rgba(0,172,193,.27),0 30px 80px -20px #000a,0 0 90px rgba(0,172,193,.16);color:var(--atext);text-align:left;user-select:none;-webkit-user-select:none}
+.app{--abg:#0f0f16;--acard:#181822;--atrack:#303042;--aac:#00acc1;--atext:#ecedf5;--amut:#8787a0;--agood:#34d399;--abad:#f46373;position:relative;width:340px;height:328px;overflow:hidden;transition:height .3s cubic-bezier(.22,1,.36,1);flex:none;background:var(--abg);border-radius:14px;box-shadow:inset 0 0 0 1px rgba(0,172,193,.27),0 30px 80px -20px #000a,0 0 90px rgba(0,172,193,.16);color:var(--atext);text-align:left;user-select:none;-webkit-user-select:none}
 .ttl{position:absolute;left:20px;top:13px;font-size:17.3px;font-weight:700;line-height:1}
 .ttl span+span{color:var(--aac)}
 .tb{position:absolute;top:10px;width:34px;height:28px;border-radius:6px;display:grid;place-items:center;color:var(--amut);cursor:pointer}
@@ -67,7 +67,7 @@ nav{display:flex;align-items:center;justify-content:space-between;height:60px}
 .s1{position:absolute;left:56px;top:12px;font-size:18.7px;font-weight:700;line-height:1;color:var(--c)}
 .s2{position:absolute;left:56px;top:40px;font-size:11px;line-height:14px;color:var(--amut)}.s2.g{color:var(--agood)}
 .cd{position:absolute;left:20px;width:300px;background:var(--acard);border-radius:12px}
-.c1{top:134px;height:124px}.c2{top:270px;height:236px}
+.c1{top:134px;height:124px}.c2{top:300px;height:370px}
 .lbl,.sl .cap,.sl .val,.tg b{font-size:13.3px;line-height:18px}
 .lbl{position:absolute;left:16px;top:19px}
 #kb{position:absolute;left:184px;top:14px;width:100px;height:32px;border:1px solid var(--aac);background:var(--atrack);display:grid;place-items:center;font-size:13.3px;font-weight:700;cursor:pointer}
@@ -86,7 +86,7 @@ nav{display:flex;align-items:center;justify-content:space-between;height:60px}
 .tg i::after{content:"";position:absolute;left:4px;top:4px;width:16px;height:16px;border-radius:50%;background:#fff;transition:left .15s}
 .tg.on i{background:var(--aac)}.tg.on i::after{left:24px}
 .rg{position:absolute;left:16px;top:208px;width:268px;font-size:11px;line-height:18px;color:var(--amut)}
-.cr{position:absolute;left:150px;top:518px;width:170px;text-align:right;font-size:11px;line-height:18px;color:var(--amut)}
+.cr{position:absolute;left:150px;bottom:8px;width:170px;text-align:right;font-size:11px;line-height:18px;color:var(--amut)}
 .cr:hover{color:var(--aac);text-decoration:underline}
 @media(max-width:380px){.hero.wrap{padding-left:8px;padding-right:8px}}
 h2.big{font-size:clamp(2rem,5.5vw,3.4rem);line-height:1.1;letter-spacing:-.03em;margin:54px auto 18px;max-width:760px;position:relative}
@@ -130,7 +130,7 @@ footer a:hover{text-decoration:underline}
 /* Hero en dos columnas + animación de entrada */
 .hero{text-align:left;padding:72px 24px 56px}
 .hero::before{left:auto;right:-60px;top:20px;transform:none}
-.hero-grid{display:grid;grid-template-columns:1fr 340px;gap:64px;align-items:center;position:relative}
+.hero-grid{display:grid;grid-template-columns:1fr 340px;gap:64px;align-items:start;position:relative}
 .copy h2.big{margin:0 0 18px;max-width:none}
 .copy .sub{margin:0 0 32px;max-width:520px}
 .copy .free{margin:40px 0 0;max-width:520px}
@@ -145,6 +145,18 @@ footer a:hover{text-decoration:underline}
 .lang button.on{background:var(--accent);color:#031417}
 .lang button:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
 @media(max-width:640px){.lang span{display:none}.links{gap:14px}}
+/* GUI plegable */
+.xb{position:absolute;left:140px;top:268px;width:60px;height:24px;border-radius:8px;background:var(--acard);border:1px solid var(--atrack);display:grid;place-items:center;cursor:pointer;color:var(--amut);transition:border-color .15s,color .15s}
+.xb:hover,.xb:focus-visible{border-color:var(--aac);color:var(--aac);outline:0}
+.xb svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s}
+.app.open .xb svg{transform:rotate(180deg)}
+.app.open{height:var(--oh,708px)}
+.c2{visibility:hidden;transition:visibility 0s linear .3s}
+.app.open .c2{visibility:visible;transition-delay:0s}
+.tg.big{height:74px}
+.tg em{position:absolute;left:0;top:40px;width:268px;font-style:normal;font-size:11px;line-height:14px;color:var(--amut)}
+.copy{padding-top:16px}
+@media(max-width:900px){.copy{padding-top:0}}
 </style>
 </head>
 <body>
@@ -190,12 +202,15 @@ footer a:hover{text-decoration:underline}
             <div id="kb" role="button">X</div>
             <div class="sl" id="cps" style="top:62px" tabindex="0" role="slider" aria-label="CPS"><span class="cap" data-es="Clics por segundo (CPS)">Clicks per second (CPS)</span><span class="val"></span><div class="tr"><div class="fl"></div><div class="th"></div></div></div>
           </div>
+          <div class="xb" id="xb" role="button" tabindex="0" aria-expanded="false" aria-label="More options"><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5"/></svg></div>
           <div class="cd c2">
             <div class="tg" id="inv" style="top:8px" role="switch"><b>Click Inventory</b><small data-es="Permite clics en menús e inventario">Allows clicks in menus and inventory</small><i></i></div>
             <div class="tg" id="rnd" style="top:56px" role="switch"><b>Randomizer</b><small data-es="Variación de CPS más humana">Human-like CPS variation</small><i></i></div>
             <div class="tg" id="exh" style="top:104px" role="switch"><b>Exhaust</b><small data-es="Baja los CPS con el tiempo y se recupera">Lowers CPS over time, then recovers</small><i></i></div>
-            <div class="sl dis" id="var" data-unit=" CPS" style="top:156px" tabindex="0" role="slider" aria-label="Variation"><span class="cap" data-es="Variación">Variation</span><span class="val"></span><div class="tr"><div class="fl"></div><div class="th"></div></div></div>
+            <div class="sl" id="var" data-unit="%" style="top:156px" tabindex="0" role="slider" aria-label="Distribution"><span class="cap" data-es="Distribución">Distribution</span><span class="val"></span><div class="tr"><div class="fl"></div><div class="th"></div></div></div>
             <div class="rg" id="rg"></div>
+            <div class="tg big on" id="dly" style="top:232px" role="switch"><b data-es="Delay inicial">Start delay</b><small data-es="Espera antes del primer clic">Waits before the first click</small><em data-es="Si utilizas o haces «Hit Select», desactiva esta opción.">If you use or do “Hit Select”, turn this option off.</em><i></i></div>
+            <div class="sl" id="dsl" data-unit=" ms" data-zero="0 ms" style="top:310px" tabindex="0" role="slider" aria-label="Delay"><span class="cap">Delay</span><span class="val"></span><div class="tr"><div class="fl"></div><div class="th"></div></div></div>
           </div>
           <a class="cr" href="https://x.com/Zelsssh" target="_blank" rel="noopener">Created by Mentiras</a>
         </div>
@@ -217,8 +232,8 @@ footer a:hover{text-decoration:underline}
   <section>
     <div class="wrap">
       <div class="grid3">
-        <div class="card"><div class="ico">~</div><h3>Randomizer</h3><p data-es="Hace que los CPS varíen en cada clic dentro de un rango que definís, y te muestra el rango real.">Makes the CPS vary on every click within a range you define, and shows you the real range.</p></div>
-        <div class="card"><div class="ico">▤</div><h3>Click Inventory</h3><p data-es="Permite clics también en menús e inventario, siguiendo la posición del cursor.">Allows clicks in menus and inventory too, following the cursor position.</p></div>
+        <div class="card"><div class="ico">~</div><h3>Randomizer</h3><p data-es="Aleatoriza el tiempo de cada clic con una distribución configurable, para que el ritmo no sea perfectamente parejo.">Randomizes the timing of every click with a configurable distribution, so the rhythm isn’t perfectly even.</p></div>
+        <div class="card"><div class="ico">▤</div><h3>Click Inventory</h3><p data-es="Permite clics también en menús e inventario, exactamente a los CPS que elegiste.">Allows clicks in menus and inventory too, at exactly the CPS you chose.</p></div>
         <div class="card"><div class="ico">⌨</div><h3 data-es="Tecla configurable">Configurable key</h3><p data-es="Funciona aunque el juego esté en primer plano. Tocás el botón, presionás la tecla nueva y listo.">Works even while the game is in the foreground. Click the button, press the new key and you’re done.</p></div>
         <div class="card"><div class="ico">◎</div><h3 data-es="Solo en tu juego">Only in your game</h3><p data-es="Solo actúa cuando la ventana activa es Minecraft. Fuera del juego no hace nada.">It only acts when the active window is Minecraft. Outside the game it does nothing.</p></div>
         <div class="card"><div class="ico">◐</div><h3 data-es="Interfaz limpia">Clean interface</h3><p data-es="Ventana oscura sin bordes, con estado claro: ACTIVADO o DESACTIVADO de un vistazo.">Borderless dark window with a clear status: ENABLED or DISABLED at a glance.</p></div>
@@ -232,10 +247,11 @@ footer a:hover{text-decoration:underline}
       <h2 data-es="Preguntas">FAQ</h2>
       <details><summary data-es="Windows dice que protegió mi PC. ¿Es seguro?">Windows says it protected my PC. Is it safe?</summary><p data-es="Aparece porque IzuyaClicker no tiene firma digital, algo que Windows muestra con programas nuevos. Tocá «Más información» y después «Ejecutar de todas formas».">It appears because IzuyaClicker isn’t digitally signed, which Windows shows for new programs. Click “More info” and then “Run anyway”.</p></details>
       <details><summary data-es="¿Cómo cambio la tecla de activación?">How do I change the activation key?</summary><p data-es="Tocá el botón de la tecla en la ventana, presioná la que quieras y queda guardada. Con Esc cancelás el cambio.">Click the key button in the window, press the key you want and it’s saved. Press Esc to cancel.</p></details>
-      <details><summary data-es="¿Para qué sirve el Randomizer?">What is the Randomizer for?</summary><p data-es="Hace que cada clic use un CPS distinto entre «CPS menos la variación» y tus CPS. La ventana te muestra el rango real.">It makes every click use a different CPS between “CPS minus the variation” and your CPS. The window shows you the real range.</p></details>
+      <details><summary data-es="¿Para qué sirve el Randomizer?">What is the Randomizer for?</summary><p data-es="Aleatoriza el tiempo de cada clic. El slider de Distribución controla cuánto varía, y la ventana te muestra el rango aproximado de CPS.">It randomizes the timing of every click. The Distribution slider controls how much it varies, and the window shows the approximate CPS range.</p></details>
       <details><summary data-es="¿Qué hace la opción Exhaust?">What does Exhaust do?</summary><p data-es="Simula el cansancio de la mano. Mientras mantenés el clic, los CPS bajan poco a poco hasta un 30% aproximado, luego se recuperan hasta tus CPS originales, se quedan así unos segundos y vuelve a empezar. Si soltás el clic, se recupera solo.">It simulates hand fatigue. While you hold the click, the CPS slowly drops by up to about 30%, then gradually recovers back to your original CPS, stays there for a few seconds and starts over. If you release the click, it recovers on its own.</p></details>
+      <details><summary data-es="¿Qué es el Start delay?">What is Start delay?</summary><p data-es="Espera un momento (100 a 500 ms) antes del primer clic cada vez que empezás a mantener el botón. Viene activado en 120 ms. Si utilizas o haces «Hit Select», desactivalo.">It waits a short moment (100 to 500 ms) before the first click each time you start holding the button. It’s on at 120 ms by default. If you use or do “Hit Select”, turn it off.</p></details>
       <details><summary data-es="¿Por qué dice «Esperando a Minecraft»?">Why does it say “Waiting for Minecraft”?</summary><p data-es="El programa solo funciona cuando la ventana en primer plano es la de Minecraft. Abrí el juego y pasa a «Minecraft detectado».">The program only works when the foreground window is Minecraft. Open the game and it changes to “Minecraft detected”.</p></details>
-      <details><summary data-es="¿Funciona IzuyaClicker en Lunar Client, Badlion Client, Cheatbreaker y etc?">Does IzuyaClicker work on Lunar Client, Badlion Client, Cheatbreaker, etc.?</summary><p data-es="IzuyaClicker funciona en cualquier cliente que utilice el proceso «javaw.exe». Mientras tu cliente favorito use este proceso, no debería de haber ningún problema.">IzuyaClicker works with any client that uses the “javaw.exe” process. As long as your favorite client uses this process, there shouldn’t be any problem.</p></details>
+      <details><summary data-es="¿Funciona IzuyaClicker en Lunar Client, Badlion Client, Cheatbreaker y etc?">Does IzuyaClicker work on Lunar Client, Badlion Client, Cheatbreaker, etc.?</summary><p data-es="IzuyaClicker funciona en cualquier cliente cuya ventana de juego sea la ventana estándar de Minecraft (LWJGL), como Lunar Client, Badlion Client o Cheatbreaker en 1.8. Mientras tu cliente favorito la use, no debería haber ningún problema. Las versiones 1.13 y superiores usan otra ventana y todavía no se detectan.">IzuyaClicker works with any client whose game window is the standard Minecraft (LWJGL) window, such as Lunar Client, Badlion Client or Cheatbreaker on 1.8. As long as your favorite client uses it, there shouldn’t be any problem. Versions 1.13 and newer use a different window and aren’t detected yet.</p></details>
       <details><summary data-es="¿El cliente es detectable en servidores y ScreenShare (SS)?">Is the client detectable on servers and ScreenShare (SS)?</summary><p data-es="IzuyaClicker no está pensado para ser indetectable en ningún aspecto. Simplemente es un proyecto creado por diversión, por lo tanto queda todo bajo tu propio riesgo utilizarlo en cualquier servidor donde esta práctica sea sancionada.">IzuyaClicker isn’t designed to be undetectable in any way. It’s simply a project made for fun, so using it on any server where this practice is sanctioned is entirely at your own risk.</p></details>
     </div>
   </section>
@@ -251,27 +267,54 @@ footer a:hover{text-decoration:underline}
 <script>
 (function(){
   var $=function(i){return document.getElementById(i)};
-  var S={on:false,key:'X',cap:false,cps:10,inv:false,rnd:false,exh:false,vr:4,lang:'en'};
-  var st=$('st'),s1=$('s1'),s2=$('s2'),kb=$('kb'),inv=$('inv'),rnd=$('rnd'),exh=$('exh'),rg=$('rg'),vr=$('var');
+  var S={on:false,key:'X',cap:false,cps:10,inv:false,rnd:false,exh:false,dist:25,dly:true,dv:120,lang:'en'};
+  var app=$('app'),st=$('st'),s1=$('s1'),s2=$('s2'),kb=$('kb'),inv=$('inv'),rnd=$('rnd'),exh=$('exh'),dly=$('dly'),rg=$('rg'),vr=$('var'),dsl=$('dsl'),xb=$('xb');
   var T=function(en,es){return S.lang==='es'?es:en;};
   var META={
     en:{t:'IzuyaClicker - Simple, free autoclicker for Windows',d:'Hold the click and IzuyaClicker does the rest. Adjustable CPS, randomizer and key activation. Free and a single file.'},
     es:{t:'IzuyaClicker - Autoclicker simple y gratuito para Windows',d:'Mantené el clic y IzuyaClicker hace el resto. CPS ajustables, randomizer y activación por tecla. Gratis y de un solo archivo.'}
   };
 
-  function slider(el,min,max,v,cb){
-    var th=el.querySelector('.th'),fl=el.querySelector('.fl'),val=el.querySelector('.val'),unit=el.dataset.unit||'',drag=false;
-    function paint(){var t=(v-min)/(max-min)*100;th.style.left=t+'%';fl.style.width=t+'%';val.textContent=v+unit;}
+  function slider(el,min,max,v,cb,step){
+    step=step||1;
+    var th=el.querySelector('.th'),fl=el.querySelector('.fl'),val=el.querySelector('.val'),unit=el.dataset.unit||'',zero=el.dataset.zero,drag=false;
+    function paint(){
+      var t=(v-min)/(max-min)*100;th.style.left=t+'%';fl.style.width=t+'%';
+      val.textContent=(zero&&el.classList.contains('dis'))?zero:v+unit;
+    }
     function set(nv){nv=Math.max(min,Math.min(max,nv));if(nv!==v){v=nv;cb(v);}paint();}
-    function fromX(x){var r=el.getBoundingClientRect(),k=r.width/el.offsetWidth,t=(x-r.left-8*k)/(r.width-16*k);set(Math.round(min+Math.max(0,Math.min(1,t))*(max-min)));}
+    function fromX(x){
+      var r=el.getBoundingClientRect(),k=r.width/el.offsetWidth,t=Math.max(0,Math.min(1,(x-r.left-8*k)/(r.width-16*k)));
+      set(min+Math.round(t*(max-min)/step)*step);
+    }
     el.addEventListener('pointerdown',function(e){drag=true;el.setPointerCapture(e.pointerId);fromX(e.clientX);});
     el.addEventListener('pointermove',function(e){if(drag)fromX(e.clientX);});
     el.addEventListener('pointerup',function(){drag=false;});
-    el.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){e.preventDefault();set(v+1);}if(e.key==='ArrowLeft'){e.preventDefault();set(v-1);}});
+    el.addEventListener('keydown',function(e){
+      if(e.key==='ArrowRight'){e.preventDefault();set(v+step);}
+      if(e.key==='ArrowLeft'){e.preventDefault();set(v-step);}
+    });
     paint();
+    return {paint:paint};
   }
   slider($('cps'),1,30,10,function(v){S.cps=v;render();});
-  slider(vr,1,10,4,function(v){S.vr=v;render();});
+  slider(vr,1,100,25,function(v){S.dist=v;render();});
+  var dlS=slider(dsl,100,500,120,function(v){S.dv=v;},10);
+
+  var c2=document.querySelector('.c2');
+  function layout(){
+    var y=8;
+    inv.style.top=y+'px';y+=48;
+    rnd.style.top=y+'px';y+=48;
+    vr.hidden=rg.hidden=!S.rnd;
+    if(S.rnd){vr.style.top=(y+4)+'px';rg.style.top=(y+56)+'px';y+=80;}
+    exh.style.top=y+'px';y+=48;
+    dly.style.top=y+'px';y+=74;
+    dsl.hidden=!S.dly;
+    if(S.dly){dsl.style.top=(y+4)+'px';y+=54;}
+    c2.style.height=(y+10)+'px';
+    app.style.setProperty('--oh',(300+y+10+38)+'px');
+  }
 
   function render(){
     st.classList.toggle('on',S.on);
@@ -281,8 +324,13 @@ footer a:hover{text-decoration:underline}
     inv.classList.toggle('on',S.inv);
     rnd.classList.toggle('on',S.rnd);
     exh.classList.toggle('on',S.exh);
-    vr.classList.toggle('dis',!S.rnd);
-    rg.textContent=S.rnd?T('Actual range: ','Rango real: ')+Math.max(1,S.cps-S.vr)+' – '+S.cps+' CPS':T('Randomizer disabled','Randomizer desactivado');
+    dly.classList.toggle('on',S.dly);
+    layout();
+    dlS.paint();
+    if(S.rnd){
+      var fast=2*(475-S.dist)/(S.cps+2),slow=2*(475+S.dist)/Math.max(1,S.cps-3);
+      rg.textContent=T('Approx. range: ','Rango aprox.: ')+(1000/slow).toFixed(1)+' – '+(1000/fast).toFixed(1)+' CPS';
+    }else rg.textContent=T('Randomizer disabled','Randomizer desactivado');
   }
 
   function setLang(l){
@@ -304,14 +352,19 @@ footer a:hover{text-decoration:underline}
     b.addEventListener('click',function(){setLang(b.dataset.l);});
   });
 
+  function toggleOpen(){var o=app.classList.toggle('open');xb.setAttribute('aria-expanded',o);}
+  xb.addEventListener('click',toggleOpen);
+
   st.addEventListener('click',function(){S.on=!S.on;render();});
   kb.addEventListener('click',function(){S.cap=true;render();});
   inv.addEventListener('click',function(){S.inv=!S.inv;render();});
   rnd.addEventListener('click',function(){S.rnd=!S.rnd;render();});
   exh.addEventListener('click',function(){S.exh=!S.exh;render();});
+  dly.addEventListener('click',function(){S.dly=!S.dly;render();});
 
   function kn(e){var k=e.key;return k===' '?'Space':k.length===1?k.toUpperCase():k;}
   document.addEventListener('keydown',function(e){
+    if(document.activeElement===xb&&(e.key==='Enter'||e.key===' ')){e.preventDefault();toggleOpen();return;}
     if(e.ctrlKey||e.metaKey||e.altKey)return;
     if(S.cap){e.preventDefault();if(e.key!=='Escape')S.key=kn(e);S.cap=false;render();return;}
     if(!e.repeat&&kn(e)===S.key){e.preventDefault();S.on=!S.on;render();}
